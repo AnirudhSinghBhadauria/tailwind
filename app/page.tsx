@@ -1,5 +1,5 @@
-import { Fragment } from "react";
 import Homebuttons from "./components/UI/Homebuttons";
+import { content } from "@/data-bank/homeParagraphs";
 
 const Home = () => {
   return (
@@ -55,24 +55,38 @@ const Home = () => {
       </div>
 
       <div className="columns-3 w-8/12 text-black mb-36">
-        <p className="bg-yellow-300 px-4 py-4 rounded-xl hover:bg-yellow-200">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum,
-          quaerat voluptatem eveniet ea velit ratione nesciunt aspernatur. Totam
-          molestias iure suscipit alias possimus, dolorem quia, dignissimos,
-          sequi eius eos a!
-        </p>{" "}
-        <p className="bg-yellow-300 px-4 py-4 rounded-xl hover:bg-yellow-200">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum,
-          quaerat voluptatem eveniet ea velit ratione nesciunt aspernatur. Totam
-          molestias iure suscipit alias possimus, dolorem quia, dignissimos,
-          sequi eius eos a!
-        </p>{" "}
-        <p className="bg-yellow-300 px-4 py-4 rounded-xl hover:bg-yellow-200">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum,
-          quaerat voluptatem eveniet ea velit ratione nesciunt aspernatur. Totam
-          molestias iure suscipit alias possimus, dolorem quia, dignissimos,
-          sequi eius eos a!
-        </p>
+        {content.map((paragraph) => (
+          <p className="bg-yellow-300 px-4 py-4 rounded-xl hover:bg-yellow-200 hover:rounded-2xl hover:transition-all duration-300">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      <div
+        className="flex flex-col justify-center items-start py-28 px-28 mb-10 w-fit border-2 border-black rounded-xl
+       bg-gray-900 shadow-2xl gap-3"
+      >
+        <h1 className="text-6xl font-semibold mb-6">This is a Title.</h1>
+        <h2 className="text-3xl font-semibold mb-2">This is sub-heading.</h2>
+        <p className="text-2xl font-semibold line">This is first paragraph.</p>
+        <p className="text-xl font-semibold">This is second paragraph.</p>
+
+        <input className="bg-white px-2 py-1 rounded-md text-black font-semibold" type="text" />
+
+        <div className="flex flex-row space-x-4">
+          <label htmlFor="check">I agree to all this</label>
+          <input className="bg-blue-400" type="checkbox" id="check" />
+        </div>
+
+        <div>
+          <select className="text-black px-4 py-1 rounded-md font-semibold " name="select" id="select">
+            <option className="font-semibold" value="one">Option One</option>
+            <option className="font-semibold" value="two">Option Two</option>
+          </select>
+        </div>
+        <button className="bg-blue-400 text-black px-5 py-1 rounded-lg font-semibold hover:bg-blue-300 transition-all duration-300">
+          button
+        </button>
       </div>
     </section>
   );
